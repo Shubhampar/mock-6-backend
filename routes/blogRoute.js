@@ -3,7 +3,7 @@ const blogModel = require("../models/blogModel")
 const blogRouter = express.Router()
 const auth = require("../middleware/auth.middleware")
 
-blogRouter.get("/",auth, async (req, res) => {
+blogRouter.get("/", async (req, res) => {
     const titleQuery = req.query.title;
     const categoryQuery = req.query.category;
     const sortQuery = req.query.sort;
