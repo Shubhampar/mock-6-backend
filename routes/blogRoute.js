@@ -58,7 +58,7 @@ blogRouter.patch("/edit/:id",auth,async(req,res)=>{
     }
 })
 
-blogRouter.patch("/delete/:id",auth,async(req,res)=>{
+blogRouter.delete("/delete/:id",auth,async(req,res)=>{
     const blogId=req.params.id
     try{
         await blogModel.findByIdAndUpdate({_id:blogId})
