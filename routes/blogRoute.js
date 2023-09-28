@@ -61,7 +61,7 @@ blogRouter.patch("/edit/:id",auth,async(req,res)=>{
 blogRouter.delete("/delete/:id",auth,async(req,res)=>{
     const blogId=req.params.id
     try{
-        await blogModel.findByIdAndUpdate({_id:blogId})
+        await blogModel.findByIdAndDelete({ _id: blogId })
         res.status(200).json({Msg:"Data deleted"})
     }catch(err){
         res.status(400).json({Error:err.message})
